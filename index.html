@@ -7,7 +7,7 @@
     <style>
         body {
             margin: 0;
-            background-color: white; /* Set background to white */
+            background-color: white; /* Set initial background to white */
             display: flex;
             flex-direction: column;
             align-items: center; /* Center items horizontally */
@@ -40,6 +40,13 @@
             align-items: center; /* Align icon and input vertically */
             margin-top: 60px; /* Add space below the logo */
             margin-bottom: 20px; /* Add some space below the search bar if needed */
+            transition: transform 0.1s ease-in-out, background-color 0.3s ease-in-out; /* Add transitions for animation and background */
+            background-color: white; /* Initial background color */
+        }
+
+        .search-bar-container.focused {
+            transform: scale(1.05); /* Slight scale up animation */
+            background-color: #e0f7fa; /* Light cyan background when focused */
         }
 
         .search-icon {
@@ -53,6 +60,7 @@
             font-size: 16px;
             padding: 5px 0; /* Adjust vertical padding */
             width: 300px; /* Adjust width as needed */
+            background-color: transparent; /* Make input background transparent */
         }
 
         .site-info {
@@ -78,5 +86,17 @@
 
     <div class="site-info">Site Info</div>
 
+    <script>
+        const searchBarContainer = document.querySelector('.search-bar-container');
+        const searchInput = document.querySelector('.search-input');
+
+        searchInput.addEventListener('focus', () => {
+            searchBarContainer.classList.add('focused');
+        });
+
+        searchInput.addEventListener('blur', () => {
+            searchBarContainer.classList.remove('focused');
+        });
+    </script>
 </body>
 </html>
