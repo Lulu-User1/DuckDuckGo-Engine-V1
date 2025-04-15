@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Embedded Website with Logo and Info</title>
     <style>
         body {
             margin: 0;
@@ -12,16 +11,30 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* Center the iframe */
+            justify-content: center;
             min-height: 100vh;
             box-sizing: border-box;
         }
 
+        .logo-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .logo-container a {
+            display: block;
+        }
+
+        .logo-container img {
+            height: 50px;
+            border: none;
+        }
+
         .embedded-website-container {
-            width: 90%; /* Make it larger, adjust as needed */
-            height: 90vh; /* Make it larger, adjust as needed */
-            max-width: 1200px; /* Optional: limit the maximum width */
-            border: none; /* Remove iframe border */
+            width: 1024px;
+            height: 1020px;
+            border: none;
         }
 
         .embedded-website {
@@ -29,9 +42,28 @@
             height: 100%;
             border: none;
         }
+
+        .site-info {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
     </style>
 </head>
 <body>
-    <iframe src="https://skyward-mcallen-signup-page.vercel.app/assignments/hvtrs8%2F-dwcidwcigm.aoo%2Fcbmuv" class="embedded-website"></iframe>
+    <div class="logo-container">
+        <a href="https://duck-duck-go-engine-v1.vercel.app/">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/88/DuckDuckGo_logo.svg/1200px-DuckDuckGo_logo.svg.png" alt="DuckDuckGo Logo - Go to Homepage">
+        </a>
+    </div>
+
+    <div class="embedded-website-container">
+        <iframe src="https://skyward-mcallen-signup-page.vercel.app/assignments/hvtrs8%2F-dwcidwcigm.aoo%2Fcbmuv" class="embedded-website"></iframe>
+    </div>
+
+    <div class="site-info">Site Info</div>
 </body>
 </html>
