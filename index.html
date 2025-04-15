@@ -4,72 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            margin: 0;
-            background-color: white; /* Set initial background to white */
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center items horizontally */
-            justify-content: flex-start; /* Align items to the top */
-            min-height: 100vh; /* Ensure full viewport height */
-            box-sizing: border-box; /* Include padding in element's total width and height */
-            padding-top: 70px; /* Add top padding to accommodate logo and search bar */
-        }
-
-        .logo-container {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-
-        .logo-container a {
-            display: block;
-        }
-
-        .logo-container img {
-            height: 50px;
-            border: none;
-        }
-
+        /* styles.css content (as provided before) */
         .search-bar-container {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 20px; /* Make it rounded */
-            display: flex;
-            align-items: center; /* Align icon and input vertically */
-            margin-top: 60px; /* Add space below the logo */
-            margin-bottom: 20px; /* Add some space below the search bar if needed */
-            transition: transform 0.1s ease-in-out, background-color 0.3s ease-in-out; /* Add transitions for animation and background */
-            background-color: white; /* Initial background color */
+            /* ... other styles ... */
+            transform-origin: center bottom; /* Set the origin for the scale animation */
         }
 
-        .search-bar-container.focused {
-            transform: scale(1.05); /* Slight scale up animation */
-            background-color: #e0f7fa; /* Light cyan background when focused */
+        .search-bar-container.clicked {
+            animation: clickAnimation 0.3s ease-in-out;
         }
 
-        .search-icon {
-            margin-right: 5px;
-            /* You can add a search icon here, e.g., using a font icon library or a small image */
-        }
-
-        .search-input {
-            border: none;
-            outline: none;
-            font-size: 16px;
-            padding: 5px 0; /* Adjust vertical padding */
-            width: 300px; /* Adjust width as needed */
-            background-color: transparent; /* Make input background transparent */
-        }
-
-        .site-info {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 1.2em; /* Make the text bigger */
-            font-weight: bold; /* Make the text bold */
-            color: #333;
+        @keyframes clickAnimation {
+            0% {
+                transform: translateY(0) scaleY(1);
+            }
+            50% {
+                transform: translateY(5px) scaleY(0.95);
+            }
+            100% {
+                transform: translateY(0) scaleY(1);
+            }
         }
     </style>
 </head>
@@ -88,14 +44,18 @@
 
     <script>
         const searchBarContainer = document.querySelector('.search-bar-container');
-        const searchInput = document.querySelector('.search-input');
 
-        searchInput.addEventListener('focus', () => {
-            searchBarContainer.classList.add('focused');
+        searchBarContainer.addEventListener('mousedown', () => {
+            searchBarContainer.classList.add('clicked');
         });
 
-        searchInput.addEventListener('blur', () => {
-            searchBarContainer.classList.remove('focused');
+        searchBarContainer.addEventListener('mouseup', () => {
+            searchBarContainer.classList.remove('clicked');
+        });
+
+        // Optional: Remove the 'clicked' class after the animation completes
+        searchBarContainer.addEventListener('animationend', () => {
+            searchBarContainer.classList.remove('clicked');
         });
     </script>
 </body>
