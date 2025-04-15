@@ -5,6 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* styles.css content (as provided before) */
+        .search-bar-container {
+            /* ... other styles ... */
+            transform-origin: center bottom; /* Set the origin for the scale animation */
+            box-shadow: 0 0 0 0 transparent; /* Initial transparent box-shadow for outline effect */
+            transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0.3s ease-in-out, box-shadow 0.2s ease-in-out; /* Smoother animation and box-shadow transition */
+        }
+
+        .search-bar-container.focused {
+            transform: scale(1.03); /* Subtle scale on focus */
+            background-color: #e0f7fa; /* Light cyan background when focused */
+            box-shadow: 0 0 5px 2px rgba(0, 188, 212, 0.5); /* Cyan outline on focus */
+        }
+
+        .search-bar-container.clicked {
+            animation: clickAnimation 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); /* Smoother click animation */
+        }
+
+        @keyframes clickAnimation {
+            0% {
+                transform: translateY(0) scaleY(1);
+            }
+            50% {
+                transform: translateY(3px) scaleY(0.98);
+            }
+            100% {
+                transform: translateY(0) scaleY(1);
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="logo-container">
