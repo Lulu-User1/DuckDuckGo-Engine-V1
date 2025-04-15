@@ -1,0 +1,18 @@
+body {
+    margin: 0; /* Remove default body margin */
+}
+
+.logo-container {
+    position: absolute; /* Position the logo container */
+    top: 10px; /* Adjust top margin as needed */
+    left: 10px; /* Adjust left margin as needed */
+}
+
+.logo-container a {
+    display: block; /* Make the link fill the container */
+}
+
+.logo-container img {
+    height: 50px; /* Adjust logo height as needed */
+    border: none; /* Remove default link border around image */
+}
