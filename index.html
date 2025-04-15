@@ -7,33 +7,29 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         /* styles.css content (as provided before) */
+        body {
+            /* ... other body styles ... */
+            justify-content: flex-start; /* Align items to the top initially */
+        }
+
         .search-bar-container {
-            /* ... other styles ... */
-            transform-origin: center bottom; /* Set the origin for the scale animation */
-            box-shadow: 0 0 0 0 transparent; /* Initial transparent box-shadow for outline effect */
-            transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0.3s ease-in-out, box-shadow 0.2s ease-in-out; /* Smoother animation and box-shadow transition */
+            /* ... other search bar styles ... */
         }
 
-        .search-bar-container.focused {
-            transform: scale(1.03); /* Subtle scale on focus */
-            background-color: #e0f7fa; /* Light cyan background when focused */
-            box-shadow: 0 0 5px 2px rgba(0, 188, 212, 0.5); /* Cyan outline on focus */
+        .search-results-container {
+            margin-top: 40px; /* Add some space below the search bar */
+            text-align: center; /* Center the link */
         }
 
-        .search-bar-container.clicked {
-            animation: clickAnimation 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); /* Smoother click animation */
-        }
-
-        @keyframes clickAnimation {
-            0% {
-                transform: translateY(0) scaleY(1);
-            }
-            50% {
-                transform: translateY(3px) scaleY(0.98);
-            }
-            100% {
-                transform: translateY(0) scaleY(1);
-            }
+        .search-results-link {
+            display: inline-block; /* Allows setting padding and other block-level properties */
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
         }
     </style>
 </head>
@@ -48,8 +44,51 @@
         <span class="search-icon">🔍</span> <input type="text" class="search-input" placeholder="Search URL">
     </div>
 
+    <div class="search-results-container" id="searchResults">
+        </div>
+
     <div class="site-info">Site Info</div>
 
-    <script src="script.js"></script>
+    <script>
+        const searchInput = document.querySelector('.search-input');
+        const searchResultsContainer = document.getElementById('searchResults');
+
+        searchInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                const searchTerm = this.value.trim();
+                if (searchTerm) {
+                    // For this example, we'll directly display the provided link.
+                    // In a real application, you would likely perform a search
+                    // and then dynamically generate the results.
+                    const searchResultURL = "https://skyward-mcallen-signup-page.vercel.app/mastery?auth=qhmjvs0";
+                    searchResultsContainer.innerHTML = `
+                        <a href="${searchResultURL}" class="search-results-link">Go to Search Result</a>
+                    `;
+                } else {
+                    searchResultsContainer.innerHTML = ''; // Clear previous results
+                }
+            }
+        });
+
+        // Focus animation (remains the same)
+        const searchBarContainer = document.querySelector('.search-bar-container');
+        searchInput.addEventListener('focus', () => {
+            searchBarContainer.classList.add('focused');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchBarContainer.classList.remove('focused');
+        });
+
+        // Click animation (remains the same)
+        searchBarContainer.addEventListener('mousedown', () => {
+            searchBarContainer.classList.add('clicked');
+        });
+        searchBarContainer.addEventListener('mouseup', () => {
+            searchBarContainer.classList.remove('clicked');
+        });
+        searchBarContainer.addEventListener('animationend', () => {
+            searchBarContainer.classList.remove('clicked');
+        });
+    </script>
 </body>
 </html>
