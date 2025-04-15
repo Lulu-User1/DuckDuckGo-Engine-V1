@@ -5,29 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* styles.css content (as provided before) */
-        .search-bar-container {
-            /* ... other styles ... */
-            transform-origin: center bottom; /* Set the origin for the scale animation */
-        }
-
-        .search-bar-container.clicked {
-            animation: clickAnimation 0.3s ease-in-out;
-        }
-
-        @keyframes clickAnimation {
-            0% {
-                transform: translateY(0) scaleY(1);
-            }
-            50% {
-                transform: translateY(5px) scaleY(0.95);
-            }
-            100% {
-                transform: translateY(0) scaleY(1);
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="logo-container">
@@ -42,21 +19,6 @@
 
     <div class="site-info">Site Info</div>
 
-    <script>
-        const searchBarContainer = document.querySelector('.search-bar-container');
-
-        searchBarContainer.addEventListener('mousedown', () => {
-            searchBarContainer.classList.add('clicked');
-        });
-
-        searchBarContainer.addEventListener('mouseup', () => {
-            searchBarContainer.classList.remove('clicked');
-        });
-
-        // Optional: Remove the 'clicked' class after the animation completes
-        searchBarContainer.addEventListener('animationend', () => {
-            searchBarContainer.classList.remove('clicked');
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
