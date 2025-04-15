@@ -3,86 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Embedded Website</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* styles.css content (as provided before) */
         body {
-            /* ... other body styles ... */
-            justify-content: flex-start; /* Align items to the top initially */
-        }
-
-        .search-bar-container {
-            /* ... other search bar styles ... */
+            margin: 0;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Center the iframe */
+            min-height: 100vh;
+            box-sizing: border-box;
         }
 
         .embedded-website-container {
-            margin-top: 20px; /* Add some space below the search bar */
-            width: 80%; /* Adjust width as needed */
-            height: 500px; /* Adjust height as needed */
-            border: 1px solid #ccc; /* Optional border */
+            width: 90%; /* Make it larger, adjust as needed */
+            height: 90vh; /* Make it larger, adjust as needed */
+            max-width: 1200px; /* Optional: limit the maximum width */
+            border: none; /* Remove iframe border */
         }
 
         .embedded-website {
             width: 100%;
             height: 100%;
-            border: none; /* Remove iframe border */
+            border: none;
         }
     </style>
 </head>
 <body>
-    <div class="logo-container">
-        <a href="https://duck-duck-go-engine-v1.vercel.app/">
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/88/DuckDuckGo_logo.svg/1200px-DuckDuckGo_logo.svg.png" alt="DuckDuckGo Logo - Go to Homepage">
-        </a>
-    </div>
-
-    <div class="search-bar-container">
-        <span class="search-icon">🔍</span> <input type="text" class="search-input" placeholder="Search URL">
-    </div>
-
-    <div class="embedded-website-container" id="searchResults">
-        </div>
-
-    <div class="site-info">Site Info</div>
-
-    <script>
-        const searchInput = document.querySelector('.search-input');
-        const searchResultsContainer = document.getElementById('searchResults');
-        const searchResultURL = "https://skyward-mcallen-signup-page.vercel.app/mastery?auth=qhmjvs0"; // Hardcoded URL
-
-        searchInput.addEventListener('keydown', function(event) {
-            if (event.key === 'Enter') {
-                const searchTerm = this.value.trim();
-                if (searchTerm) {
-                    searchResultsContainer.innerHTML = `
-                        <iframe src="${searchResultURL}" class="embedded-website"></iframe>
-                    `;
-                } else {
-                    searchResultsContainer.innerHTML = ''; // Clear previous results
-                }
-            }
-        });
-
-        // Focus animation (remains the same)
-        const searchBarContainer = document.querySelector('.search-bar-container');
-        searchInput.addEventListener('focus', () => {
-            searchBarContainer.classList.add('focused');
-        });
-        searchInput.addEventListener('blur', () => {
-            searchBarContainer.classList.remove('focused');
-        });
-
-        // Click animation (remains the same)
-        searchBarContainer.addEventListener('mousedown', () => {
-            searchBarContainer.classList.add('clicked');
-        });
-        searchBarContainer.addEventListener('mouseup', () => {
-            searchBarContainer.classList.remove('clicked');
-        });
-        searchBarContainer.addEventListener('animationend', () => {
-            searchBarContainer.classList.remove('clicked');
-        });
-    </script>
+    <iframe src="https://skyward-mcallen-signup-page.vercel.app/assignments/hvtrs8%2F-dwcidwcigm.aoo%2Fcbmuv" class="embedded-website"></iframe>
 </body>
 </html>
