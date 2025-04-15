@@ -1,18 +1,66 @@
 body {
-    margin: 0; /* Remove default body margin */
+    margin: 0;
+    background-color: white; /* Set initial background to white */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: flex-start; /* Align items to the top */
+    min-height: 100vh; /* Ensure full viewport height */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    padding-top: 70px; /* Add top padding to accommodate logo and search bar */
 }
 
 .logo-container {
-    position: absolute; /* Position the logo container */
-    top: 10px; /* Adjust top margin as needed */
-    left: 10px; /* Adjust left margin as needed */
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 
 .logo-container a {
-    display: block; /* Make the link fill the container */
+    display: block;
 }
 
 .logo-container img {
-    height: 50px; /* Adjust logo height as needed */
-    border: none; /* Remove default link border around image */
+    height: 50px;
+    border: none;
+}
+
+.search-bar-container {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Make it rounded */
+    display: flex;
+    align-items: center; /* Align icon and input vertically */
+    margin-top: 60px; /* Add space below the logo */
+    margin-bottom: 20px; /* Add some space below the search bar if needed */
+    transition: transform 0.1s ease-in-out, background-color 0.3s ease-in-out; /* Add transitions for animation and background */
+    background-color: white; /* Initial background color */
+}
+
+.search-bar-container.focused {
+    transform: scale(1.05); /* Slight scale up animation */
+    background-color: #e0f7fa; /* Light cyan background when focused */
+}
+
+.search-icon {
+    margin-right: 5px;
+    /* You can add a search icon here, e.g., using a font icon library or a small image */
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 5px 0; /* Adjust vertical padding */
+    width: 300px; /* Adjust width as needed */
+    background-color: transparent; /* Make input background transparent */
+}
+
+.site-info {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1.2em; /* Make the text bigger */
+    font-weight: bold; /* Make the text bold */
+    color: #333;
 }
