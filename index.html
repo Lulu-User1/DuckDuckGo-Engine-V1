@@ -17,19 +17,24 @@
         }
 
         .search-results-container {
-            margin-top: 40px; /* Add some space below the search bar */
-            text-align: center; /* Center the link */
+            margin-top: 20px; /* Add some space below the search bar */
+            text-align: center; /* Center the results */
         }
 
-        .search-results-link {
-            display: inline-block; /* Allows setting padding and other block-level properties */
-            padding: 10px 20px;
-            background-color: #f0f0f0;
-            color: #333;
-            text-decoration: none;
+        .search-result-item {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            padding: 10px;
+            margin-bottom: 10px;
             border-radius: 5px;
             font-size: 16px;
-            border: 1px solid #ccc;
+            color: #333;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .search-result-item a {
+            text-decoration: none;
+            color: inherit; /* Inherit color from the parent */
         }
     </style>
 </head>
@@ -52,17 +57,17 @@
     <script>
         const searchInput = document.querySelector('.search-input');
         const searchResultsContainer = document.getElementById('searchResults');
+        const searchResultURL = "https://skyward-mcallen-signup-page.vercel.app/mastery?auth=qhmjvs0"; // Hardcoded URL
 
         searchInput.addEventListener('keydown', function(event) {
             if (event.key === 'Enter') {
                 const searchTerm = this.value.trim();
                 if (searchTerm) {
-                    // For this example, we'll directly display the provided link.
-                    // In a real application, you would likely perform a search
-                    // and then dynamically generate the results.
-                    const searchResultURL = "https://skyward-mcallen-signup-page.vercel.app/mastery?auth=qhmjvs0";
+                    // For this example, we'll create a simple display for the URL
                     searchResultsContainer.innerHTML = `
-                        <a href="${searchResultURL}" class="search-results-link">Go to Search Result</a>
+                        <div class="search-result-item">
+                            Search Result: <a href="${searchResultURL}" target="_blank">${searchResultURL}</a>
+                        </div>
                     `;
                 } else {
                     searchResultsContainer.innerHTML = ''; // Clear previous results
