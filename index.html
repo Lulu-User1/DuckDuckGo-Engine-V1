@@ -13,14 +13,20 @@
             top: 10px; /* Adjust top margin as needed */
             left: 10px; /* Adjust left margin as needed */
         }
+        .logo-container a {
+            display: block; /* Make the link fill the container */
+        }
         .logo-container img {
             height: 50px; /* Adjust logo height as needed */
+            border: none; /* Remove default link border around image */
         }
     </style>
 </head>
 <body>
     <div class="logo-container">
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/88/DuckDuckGo_logo.svg/1200px-DuckDuckGo_logo.svg.png" alt="DuckDuckGo Logo">
+        <a href="/">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/88/DuckDuckGo_logo.svg/1200px-DuckDuckGo_logo.svg.png" alt="DuckDuckGo Logo - Go to Homepage">
+        </a>
     </div>
 
     </body>
