@@ -1,3 +1,4 @@
+/* (Keep the styles from the previous response in this file) */
 body {
     margin: 0;
     background-color: white; /* Set initial background to white */
@@ -33,18 +34,20 @@ body {
     align-items: center; /* Align icon and input vertically */
     margin-top: 60px; /* Add space below the logo */
     margin-bottom: 20px; /* Add some space below the search bar if needed */
-    transition: transform 0.1s ease-in-out, background-color 0.3s ease-in-out; /* Add transitions for focus effect */
+    transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0.3s ease-in-out, box-shadow 0.2s ease-in-out; /* Smoother animation and box-shadow transition */
     background-color: white; /* Initial background color */
     transform-origin: center bottom; /* Set the origin for the click animation */
+    box-shadow: 0 0 0 0 transparent; /* Initial transparent box-shadow */
 }
 
 .search-bar-container.focused {
-    transform: scale(1.05); /* Slight scale up animation on focus */
+    transform: scale(1.03); /* Subtle scale on focus */
     background-color: #e0f7fa; /* Light cyan background when focused */
+    box-shadow: 0 0 5px 2px rgba(0, 188, 212, 0.5); /* Cyan outline on focus */
 }
 
 .search-bar-container.clicked {
-    animation: clickAnimation 0.3s ease-in-out;
+    animation: clickAnimation 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); /* Smoother click animation */
 }
 
 @keyframes clickAnimation {
@@ -52,7 +55,7 @@ body {
         transform: translateY(0) scaleY(1);
     }
     50% {
-        transform: translateY(5px) scaleY(0.95);
+        transform: translateY(3px) scaleY(0.98);
     }
     100% {
         transform: translateY(0) scaleY(1);
