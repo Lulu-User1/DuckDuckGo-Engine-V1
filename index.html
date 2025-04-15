@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Embedded Website with Logo and Info</title>
     <style>
+        /* CSS */
         body {
             margin: 0;
             background-color: white;
@@ -58,15 +59,15 @@
             right: 10px;
             font-size: 1.2em;
             font-weight: bold;
-            color: orange; /* Orange text color */
+            color: orange;
             padding: 8px 16px;
-            border-radius: 20px; /* Circular border radius */
-            transition: box-shadow 0.3s ease; /* Smooth transition for the highlight */
-            background-color: transparent; /* Ensure no background color initially */
+            border-radius: 20px;
+            transition: background-color 0.3s ease; /* Transition for the background color */
+            background-color: transparent; /* Initially transparent */
         }
 
-        .made-by:hover {
-            box-shadow: 0 0 10px 2px rgba(255, 165, 0, 0.7); /* Orange glowing shadow */
+        .made-by.highlight {
+            background-color: rgba(0, 0, 255, 0.2); /* Light blue background */
         }
     </style>
 </head>
@@ -82,6 +83,29 @@
     </div>
 
     <div class="site-info">Site Info</div>
-    <div class="made-by">Made By Carlos CMS</div>
+    <div class="made-by" id="madeByText">Made By Carlos CMS</div>
+
+    <script>
+        /* JavaScript */
+        const madeByText = document.getElementById('madeByText');
+
+        document.addEventListener('mousemove', (event) => {
+            const rect = madeByText.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const distance = Math.sqrt(
+                Math.pow(event.clientX - centerX, 2) + Math.pow(event.clientY - centerY, 2)
+            );
+
+            // Adjust this distance to control how close the mouse needs to be
+            const proximityThreshold = 50;
+
+            if (distance < proximityThreshold) {
+                madeByText.classList.add('highlight');
+            } else {
+                madeByText.classList.remove('highlight');
+            }
+        });
+    </script>
 </body>
 </html>
