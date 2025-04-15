@@ -1,86 +1,29 @@
-/* (Keep the styles from the previous response in this file) */
+/* You can delete all the previous CSS rules related to the logo, search bar, and site info. */
+
+/* If you want to keep basic body styles separate, you can have something like this: */
 body {
     margin: 0;
-    background-color: white; /* Set initial background to white */
+    background-color: white;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center items horizontally */
-    justify-content: flex-start; /* Align items to the top */
-    min-height: 100vh; /* Ensure full viewport height */
-    box-sizing: border-box; /* Include padding in element's total width and height */
-    padding-top: 70px; /* Add top padding to accommodate logo and search bar */
+    align-items: center;
+    justify-content: center; /* Center the iframe */
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
-.logo-container {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-.logo-container a {
-    display: block;
-}
-
-.logo-container img {
-    height: 50px;
+/* Styles for the iframe container (optional, as the iframe is now direct child of body) */
+/* .embedded-website-container {
+    width: 90%;
+    height: 90vh;
+    max-width: 1200px;
     border: none;
-}
+} */
 
-.search-bar-container {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 20px; /* Make it rounded */
-    display: flex;
-    align-items: center; /* Align icon and input vertically */
-    margin-top: 60px; /* Add space below the logo */
-    margin-bottom: 20px; /* Add some space below the search bar if needed */
-    transition: transform 0.2s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0.3s ease-in-out, box-shadow 0.2s ease-in-out; /* Smoother animation and box-shadow transition */
-    background-color: white; /* Initial background color */
-    transform-origin: center bottom; /* Set the origin for the click animation */
-    box-shadow: 0 0 0 0 transparent; /* Initial transparent box-shadow */
-}
-
-.search-bar-container.focused {
-    transform: scale(1.03); /* Subtle scale on focus */
-    background-color: #e0f7fa; /* Light cyan background when focused */
-    box-shadow: 0 0 5px 2px rgba(0, 188, 212, 0.5); /* Cyan outline on focus */
-}
-
-.search-bar-container.clicked {
-    animation: clickAnimation 0.2s cubic-bezier(0.215, 0.61, 0.355, 1); /* Smoother click animation */
-}
-
-@keyframes clickAnimation {
-    0% {
-        transform: translateY(0) scaleY(1);
-    }
-    50% {
-        transform: translateY(3px) scaleY(0.98);
-    }
-    100% {
-        transform: translateY(0) scaleY(1);
-    }
-}
-
-.search-icon {
-    margin-right: 5px;
-    /* You can add a search icon here, e.g., using a font icon library or a small image */
-}
-
-.search-input {
+/* Styles for the iframe itself */
+.embedded-website {
+    width: 90%; /* Make it larger, adjust as needed */
+    height: 90vh; /* Make it larger, adjust as needed */
+    max-width: 1200px; /* Optional: limit the maximum width */
     border: none;
-    outline: none;
-    font-size: 16px;
-    padding: 5px 0; /* Adjust vertical padding */
-    width: 300px; /* Adjust width as needed */
-    background-color: transparent; /* Make input background transparent */
-}
-
-.site-info {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    font-size: 1.2em; /* Make the text bigger */
-    font-weight: bold; /* Make the text bold */
-    color: #333;
 }
