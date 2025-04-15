@@ -33,13 +33,30 @@ body {
     align-items: center; /* Align icon and input vertically */
     margin-top: 60px; /* Add space below the logo */
     margin-bottom: 20px; /* Add some space below the search bar if needed */
-    transition: transform 0.1s ease-in-out, background-color 0.3s ease-in-out; /* Add transitions for animation and background */
+    transition: transform 0.1s ease-in-out, background-color 0.3s ease-in-out; /* Add transitions for focus effect */
     background-color: white; /* Initial background color */
+    transform-origin: center bottom; /* Set the origin for the click animation */
 }
 
 .search-bar-container.focused {
-    transform: scale(1.05); /* Slight scale up animation */
+    transform: scale(1.05); /* Slight scale up animation on focus */
     background-color: #e0f7fa; /* Light cyan background when focused */
+}
+
+.search-bar-container.clicked {
+    animation: clickAnimation 0.3s ease-in-out;
+}
+
+@keyframes clickAnimation {
+    0% {
+        transform: translateY(0) scaleY(1);
+    }
+    50% {
+        transform: translateY(5px) scaleY(0.95);
+    }
+    100% {
+        transform: translateY(0) scaleY(1);
+    }
 }
 
 .search-icon {
