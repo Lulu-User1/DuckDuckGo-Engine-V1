@@ -7,6 +7,11 @@
     <style>
         body {
             margin: 0; /* Remove default body margin */
+            display: flex; /* Enable flexbox for centering */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+            flex-direction: column; /* Stack items vertically (for logo and button) */
         }
         .logo-container {
             position: absolute; /* Position the logo container */
@@ -20,6 +25,21 @@
             height: 50px; /* Adjust logo height as needed */
             border: none; /* Remove default link border around image */
         }
+        .engine-web-button {
+            padding: 10px 20px; /* Add some padding to the button */
+            font-size: 16px; /* Set a readable font size */
+            background-color: #f0f0f0; /* Light gray background */
+            border: 1px solid #ccc; /* Light gray border */
+            cursor: pointer; /* Change cursor to indicate it's clickable */
+            text-decoration: none; /* Remove default link underline */
+            color: #333; /* Dark text color */
+            border-radius: 5px; /* Slightly rounded corners */
+        }
+
+        /* Adjust positioning if you want the button to be further down */
+        main {
+            margin-top: 80px; /* Add some space below the logo */
+        }
     </style>
 </head>
 <body>
@@ -29,5 +49,9 @@
         </a>
     </div>
 
-    </body>
+    <main>
+        <a href="https://duck-duck-go-engine-v1.vercel.app/EngineWeb/" class="engine-web-button">Go to EngineWeb</a>
+    </main>
+
+</body>
 </html>
