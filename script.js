@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (onionSwitch.checked) {
             switchStatus.textContent = "Onionize: ON";
         } else {
-            switchStatus.textContent = "Onionize: OFF";
+            switchStatus.textContent = "You're ready for the world's most private browsing experience.";
         }
     });
 });
