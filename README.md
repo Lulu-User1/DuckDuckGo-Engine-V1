@@ -1,4 +1,4 @@
-# 🚀 DuckDuckGo Free GUI Engine
+# 🚀 Tor: DuckDuckGo Free GUI
 
 ### **🔒 Explore the web privately and freely with the ultimate DuckDuckGo GUI Engine.**  
 Built for **speed, security, and seamless browsing**, this interface enhances DuckDuckGo’s private search experience with a **custom UI and privacy-first design**.
