@@ -1,3 +1,4 @@
+/* General body styling */
 body {
     background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d2dc0127-9df3-46ef-bde0-18fcfca628ed/dbairig-6a445406-fbd5-4b68-bd12-41f1093206e3.png/v1/fill/w_1024,h_576,q_80,strp/tor_wallpaper_3_by_wuphaz_by_wuphaz_dbairig-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvZDJkYzAxMjctOWRmMy00NmVmLWJkZTAtMThmY2ZjYTYyOGVkXC9kYmFpcmlnLTZhNDQ1NDA2LWZiZDUtNGI2OC1iZDEyLTQxZjEwOTMyMDZlMy5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.lDRWVKkNpC-TGxc5p-bVb07tyPjM6kCbqMi9VIe53rQ');
     background-size: cover;
@@ -13,7 +14,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Header section */
+/* Header section (Tor logo and text) */
 .header {
     position: absolute;
     top: 12%;
@@ -23,11 +24,19 @@ body {
 .tor-logo {
     width: 120px; /* Adjust the size */
     margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header img {
+    content: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Tor-logo-2011-flat.svg/2560px-Tor-logo-2011-flat.svg.png');
 }
 
 .header-text {
     font-size: 28px;
     font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Main UI box */
@@ -36,4 +45,42 @@ body {
     background: rgba(0, 0, 0, 0.6);
     padding: 20px;
     border-radius: 10px;
+}
+
+/* Input field */
+input {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Button */
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: purple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #6a0dad;
+    transform: scale(1.05);
+}
+
+/* Text below UI */
+p {
+    font-size: 14px;
+    opacity: 0.8;
 }
