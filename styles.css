@@ -43,11 +43,18 @@ body {
     border-radius: 10px;
 }
 
-/* Search bar */
-input[type="text"] {
-    width: 80%;
-    padding: 10px;
+/* Search bar and switch container */
+.search-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     margin-top: 10px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
     border: none;
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.1);
@@ -64,7 +71,6 @@ input::placeholder {
     display: inline-block;
     width: 50px;
     height: 25px;
-    margin-top: 15px;
 }
 
 .switch input {
@@ -109,4 +115,5 @@ input:checked + .slider:before {
 p {
     font-size: 14px;
     opacity: 0.8;
+    margin-top: 15px;
 }
