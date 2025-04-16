@@ -52,13 +52,27 @@ body {
     margin-top: 10px;
 }
 
-/* Search bar styling */
+/* Search box with DuckDuckGo logo */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.duck-logo {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
 input[type="text"] {
-    width: 70%;
+    width: 100%;
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
+    background: transparent;
     color: white;
 }
 
@@ -131,6 +145,6 @@ input:checked + .slider:before {
     color: black;
     padding: 10px;
     border-radius: 8px;
-    background-color: rgba(128, 0, 128, 0.4); /* Light transparent purple */
-    box-shadow: 0 0 15px rgba(128, 0, 128, 0.8); /* Strong purple glow */
+    background-color: rgba(128, 0, 128, 0.4);
+    box-shadow: 0 0 15px rgba(128, 0, 128, 0.8);
 }
