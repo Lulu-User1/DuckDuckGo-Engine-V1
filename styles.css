@@ -1,13 +1,6 @@
 body {
     font-family: sans-serif;
     margin: 0;
-    /* If you're using a background image, keep this */
-    background-image: url('tor-project-logo.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    /* Or a solid background color if you prefer */
-    /* background-color: #4c2882; */
     color: white;
     display: flex; /* Enable flexbox for centering */
     justify-content: center; /* Center horizontally */
@@ -15,14 +8,14 @@ body {
     min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
     overflow: hidden;
     flex-direction: column; /* Stack the content vertically */
+    background-image: url('lead.png'); /* Use the new image */
+    background-size: cover; /* Adjust as needed: contain, repeat */
+    background-repeat: no-repeat; /* Adjust as needed */
+    background-position: center; /* Adjust as needed */
 }
 
 .container {
-    /* Remove fixed width and max-width if you want the elements to naturally size */
-    /* width: 80%; */
-    /* max-width: 600px; */
     text-align: center; /* Center text within the elements */
-    /* Remove flex properties from container as body is now the flex container */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -150,14 +143,11 @@ input:checked + .slider:before {
 }
 
 footer {
-    position: absolute; /* Changed to absolute to not interfere with vertical centering */
+    position: absolute; /* Changed to absolute */
     bottom: 0;
     left: 0;
     width: 100%;
     background-color: transparent;
-    /* You might need to adjust the height or remove the footer-design if it overlaps */
-    /* height: 80px; */
-    /* overflow: hidden; */
 }
 
 .footer-design {
