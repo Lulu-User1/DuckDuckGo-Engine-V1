@@ -118,4 +118,5 @@ input:checked + .slider:before {
     margin-top: 15px;
     text-align: center;
     opacity: 0.8;
+    color: black; /* Set text color to black */
 }
