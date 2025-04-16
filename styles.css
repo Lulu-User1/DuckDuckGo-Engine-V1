@@ -111,12 +111,16 @@ input:checked + .slider:before {
     transform: translateX(25px);
 }
 
-/* Privacy text OUTSIDE the box */
+/* Privacy text OUTSIDE the box with glowing purple effect */
 .privacy-text {
     font-size: 16px;
     font-weight: bold;
     margin-top: 15px;
     text-align: center;
     opacity: 0.8;
-    color: black; /* Set text color to black */
+    color: black;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(128, 0, 128, 0.4); /* Light transparent purple */
+    box-shadow: 0 0 15px rgba(128, 0, 128, 0.8); /* Strong purple glow */
 }
