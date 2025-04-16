@@ -3,107 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded Website with Logo and Info</title>
-    <style>
-        body {
-            margin: 0;
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
-
-        .logo-container {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-
-        .logo-container a {
-            display: block;
-        }
-
-        .logo-container img {
-            height: 50px;
-            border: none;
-        }
-
-        .embedded-website-container {
-            width: 1024px;
-            height: 940px;
-            border: none;
-        }
-
-        .embedded-website {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .site-info {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .made-by {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 1.2em;
-            font-weight: bold;
-            color: orange;
-            padding: 8px 16px;
-            border-radius: 20px;
-            transition: background-color 0.3s ease; /* Transition for the background color */
-            background-color: transparent; /* Initially transparent */
-        }
-
-        .made-by.highlight {
-            background-color: rgba(0, 0, 255, 0.2); /* Light blue background */
-        }
-    </style>
+    <title>Private Exploration</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="logo-container">
-        <a href="https://duck-duck-go-engine-v1.vercel.app/">
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/88/DuckDuckGo_logo.svg/1200px-DuckDuckGo_logo.svg.png" alt="DuckDuckGo Logo - Go to Homepage">
-        </a>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon"></div>
+            </div>
+            <h1>Explore. Privately.</h1>
+        </header>
+
+        <div class="search-bar-container">
+            <div class="search-bar">
+                <div class="search-icon"></div>
+                <input type="text" placeholder="Search with DuckDuckGo">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <span class="onionize-text">Onionize</span>
+            </div>
+        </div>
+
+        <p class="ready-text">You're ready for the world's most private browsing experience.</p>
+
+        <footer>
+            <div class="footer-design">
+                </div>
+        </footer>
     </div>
 
-    <div class="embedded-website-container">
-        <iframe src="https://skyward-mcallen-signup-page.vercel.app/assignments/hvtrs8%2F-dwcidwcigm.aoo%2Fcbmuv" class="embedded-website"></iframe>
-    </div>
-
-    <div class="site-info">Site Info</div>
-    <div class="made-by" id="madeByText">Made By Carlos CMS</div>
-
-    <script>
-        const madeByText = document.getElementById('madeByText');
-
-        document.addEventListener('mousemove', (event) => {
-            const rect = madeByText.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            const distance = Math.sqrt(
-                Math.pow(event.clientX - centerX, 2) + Math.pow(event.clientY - centerY, 2)
-            );
-
-            // Adjust this distance to control how close the mouse needs to be
-            const proximityThreshold = 50;
-
-            if (distance < proximityThreshold) {
-                madeByText.classList.add('highlight');
-            } else {
-                madeByText.classList.remove('highlight');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
