@@ -15,7 +15,7 @@ Built for **speed, security, and seamless browsing**, this interface enhances Du
 ---
 
 ## 🎨 **Preview**
-![DuckDuckGo Free GUI Engine](https://imgur.com/a/vSLRIED)
+![DuckDuckGo Free GUI Engine](https://i.imgur.com/A2SLZ6b_d.webp?maxwidth=760&fidelity=grand)
 
 _The DuckDuckGo Free GUI Engine features a dark, modern UI with an integrated Tor logo, Onionize switch, and DuckDuckGo-powered search. Designed for maximum privacy and usability._
 
