@@ -22,15 +22,11 @@ body {
 }
 
 .tor-logo {
-    width: 120px; /* Adjust the size */
+    width: 120px;
     margin-bottom: 10px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
-
-.header img {
-    content: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Tor-logo-2011-flat.svg/2560px-Tor-logo-2011-flat.svg.png');
 }
 
 .header-text {
@@ -47,40 +43,48 @@ body {
     border-radius: 10px;
 }
 
-/* Input field */
-input {
-    width: 80%;
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+/* Toggle switch styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
 }
 
-input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-/* Button */
-button {
-    padding: 10px 20px;
-    margin-top: 10px;
-    background: purple;
-    color: white;
-    border: none;
-    border-radius: 5px;
+.slider {
+    position: absolute;
     cursor: pointer;
-    transition: 0.3s;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #777;
+    transition: 0.4s;
+    border-radius: 25px;
 }
 
-button:hover {
-    background: #6a0dad;
-    transform: scale(1.05);
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
 }
 
-/* Text below UI */
-p {
-    font-size: 14px;
-    opacity: 0.8;
+input:checked + .slider {
+    background-color: #6a0dad;
+}
+
+input:checked + .slider:before {
+    transform: translateX(25px);
 }
