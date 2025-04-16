@@ -50,6 +50,7 @@ body {
     justify-content: center;
     gap: 10px;
     margin-top: 10px;
+    flex-direction: column; /* Places switch below the search bar */
 }
 
 input[type="text"] {
@@ -109,6 +110,13 @@ input:checked + .slider {
 
 input:checked + .slider:before {
     transform: translateX(25px);
+}
+
+/* Onionize Text Below Switch */
+.onionize-text {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 /* Privacy text OUTSIDE the box with glowing purple effect */
