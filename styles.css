@@ -1,32 +1,41 @@
 body {
     font-family: sans-serif;
     margin: 0;
-    background-color: #4c2882; /* Dark purple background */
+    /* If you're using a background image, keep this */
+    background-image: url('tor-project-logo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Or a solid background color if you prefer */
+    /* background-color: #4c2882; */
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden; /* To hide any potential overflow from footer design */
+    display: flex; /* Enable flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+    overflow: hidden;
+    flex-direction: column; /* Stack the content vertically */
 }
 
 .container {
+    /* Remove fixed width and max-width if you want the elements to naturally size */
+    /* width: 80%; */
+    /* max-width: 600px; */
+    text-align: center; /* Center text within the elements */
+    /* Remove flex properties from container as body is now the flex container */
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
-    max-width: 600px;
-    text-align: center;
 }
 
 header {
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 30px; /* Add some space below the header */
 }
 
 .logo {
-    background-color: #7c5295; /* Lighter purple for the logo background */
+    background-color: #7c5295;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -37,7 +46,7 @@ header {
 }
 
 .logo-icon {
-    background-color: #a87dc2; /* Even lighter purple for the inner icon */
+    background-color: #a87dc2;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -49,7 +58,8 @@ header h1 {
 }
 
 .search-bar-container {
-    width: 100%;
+    width: 100%; /* Make the search bar container take full width of its parent (container) */
+    max-width: 450px; /* Limit the maximum width of the search bar */
     margin-bottom: 20px;
 }
 
@@ -62,7 +72,7 @@ header h1 {
 }
 
 .search-icon {
-    background-image: url('search-icon.png'); /* Replace with your search icon */
+    background-image: url('search-icon.png');
     background-size: cover;
     width: 20px;
     height: 20px;
@@ -78,7 +88,6 @@ header h1 {
     color: #333;
 }
 
-/* Switch styles */
 .switch {
     position: relative;
     display: inline-block;
@@ -137,20 +146,23 @@ input:checked + .slider:before {
 .ready-text {
     font-size: 1.1em;
     color: #ddd;
-    margin-bottom: 40px;
+    margin-bottom: 40px; /* Add some space below the text */
 }
 
 footer {
-    position: fixed;
+    position: absolute; /* Changed to absolute to not interfere with vertical centering */
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: transparent; /* Let the design show through */
+    background-color: transparent;
+    /* You might need to adjust the height or remove the footer-design if it overlaps */
+    /* height: 80px; */
+    /* overflow: hidden; */
 }
 
 .footer-design {
-    background-image: url('footer-pattern.png'); /* Replace with your footer pattern image */
+    background-image: url('footer-pattern.png'); /* Make sure you have this image */
     background-repeat: repeat-x;
-    height: 80px; /* Adjust height as needed */
+    height: 80px;
     background-size: auto 80px;
 }
