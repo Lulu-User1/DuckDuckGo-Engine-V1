@@ -16,17 +16,17 @@ body {
 /* Header section */
 .header {
     position: absolute;
-    top: 10%;
+    top: 12%;
     text-align: center;
 }
 
 .tor-logo {
-    width: 100px; /* Adjust the size */
+    width: 120px; /* Adjust the size */
     margin-bottom: 10px;
 }
 
 .header-text {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
 }
 
