@@ -43,12 +43,28 @@ body {
     border-radius: 10px;
 }
 
-/* Toggle switch styling */
+/* Search bar */
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Onionize Switch */
 .switch {
     position: relative;
     display: inline-block;
     width: 50px;
     height: 25px;
+    margin-top: 15px;
 }
 
 .switch input {
@@ -87,4 +103,10 @@ input:checked + .slider {
 
 input:checked + .slider:before {
     transform: translateX(25px);
+}
+
+/* Text below UI */
+p {
+    font-size: 14px;
+    opacity: 0.8;
 }
